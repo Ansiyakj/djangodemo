@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <img src="{% static 'images/banner1.avif' %}" height="430px" width="100%">
+</div>
+<div class="container-fluid mt-4" style="margin-bottom:60px;">
+    <h3 class="text-center mb-2 text-white text-uppercase">Our Collections</h3>
+    <p class="text-white" style="text-align:justify;line-height:1.7;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+</div>
+    <div class="container-fluid mt-4" style="margin-bottom:100px;">
+        <div class="row">
+            {% for i in c %}
+            <div class="col-sm-4">
+
+                <div class="card" style="width: 30rem;">
+            <img src="{{i.image.url}}" class="card-img-top" height="250px" width="100%" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.cname}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <a href="{% url 'shop:allproducts' i.cname %}" style="position:relative;left:35%;" class="btn btn-primary">Products</a>
+  </div>
+</div>
+       </div>
+         {% endfor %}
+
+      </div>
+</div>
+{% endblock %}

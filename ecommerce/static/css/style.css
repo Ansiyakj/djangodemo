@@ -1,0 +1,32 @@
+body
+{
+background-color:blue;
+
+font-family: 'Roboto', sans-serif;
+
+}
+ .navbar-light .navbar-nav .nav-link,.navbar-light .navbar-brand
+ {
+ color:orange;
+ font-size:18px;
+ font-weight:bold;
+ }
+
+.footer
+{
+height:40px;
+width:100%;
+background-color:white;
+position:fixed;
+bottom:0;
+left:0;
+font-weight:bold;
+text-align:center;
+
+color:orange;
+}
+ .btn-outline-warning {
+ color:orange;
+ border-color:orange;
+ }
+

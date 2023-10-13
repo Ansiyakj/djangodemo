@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container" style="margin-bottom:100px;">
+    <div class="row">
+    <h5 class="text-white text-center">Name of the customer:{{u}}</h5>
+
+
+        {% for order in order %}
+        <div class="col-sm-3 py-3 text-center" style="border:2px solid gray">
+
+            <img src="{{order.product.image.url}}" height="150px" width="150px"></div>
+        <div class="col-sm-7 text-center text-white" style="border:2px solid gray">
+            Delivery Address:{{order.place}}<br>
+            Phone Number:{{order.phone}}<br>
+            {{order.product.pname}}<br>
+            {{order.product.price}}<br>
+             Quantity ordered:{{order.no_of_items}}<br>
+            Subtotal:{{order.subtotal}}<br>
+            <strong>Ordered on:{{order.date_added}}</strong><br>
+            <strong class="text-success">Delivery Status:{{order.delivery_status}}</strong>
+        </div>
+
+        {% endfor %}
+   </div>
+</div>
+{% endblock %}
